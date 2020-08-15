@@ -22,7 +22,7 @@ common common
 library generals-prelude
   import: common
   hs-source-dirs:
-      prelude
+      src
   exposed-modules:
       Prelude
     , Control.Lens.Unsafe
