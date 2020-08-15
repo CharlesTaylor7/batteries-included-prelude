@@ -1,0 +1,41 @@
+cabal-version:  2.2
+name:           generals
+version:        0.0.0.0
+author:         Charles Taylor
+maintainer:     charlestaylor95@gmail.com
+copyright:      2020 Charles Taylor
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/CharlesTaylor7/batteries-included-prelude
+
+common common
+  default-language: Haskell2010
+  ghc-options:
+      -freverse-errors
+      -ferror-spans
+      -Werror=missing-home-modules
+      -fwarn-incomplete-patterns
+      -O0 -j2 +RTS -A128m -n2m -qg -RTS
+
+library generals-prelude
+  import: common
+  hs-source-dirs:
+      prelude
+  exposed-modules:
+      Prelude
+    , Control.Lens.Unsafe
+    , Control.Lens.Safe
+  build-depends:
+      base >= 4.7 && < 5.0
+    , relude
+    , lens >= 4.19.2 && < 5.0
+    , profunctors
+    , vector
+    , containers
+    , mtl
+    , data-default
+    , these
+    , semialign
+    , generic-monoid
